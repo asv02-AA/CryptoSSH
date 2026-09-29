@@ -1,0 +1,24 @@
+name: Windows build
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore locked dependencies
+        run: dotnet restore native/CryptoSSH/CryptoSSH.csproj --locked-mode
+      - name: Build without vendor libraries
+        shell: pwsh
+        run: ./scripts/build-native.ps1 -SkipInstaller
+      - name: Core regression checks
+        shell: pwsh
+        run: ./scripts/test-native.ps1 -CoreOnly

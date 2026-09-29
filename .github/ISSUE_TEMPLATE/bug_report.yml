@@ -1,0 +1,36 @@
+name: Ошибка
+description: Проблема с подключением, токеном, терминалом или установкой
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Не прикладывайте PIN, пароли, закрытые ключи, реальные адреса или серийные номера. Уязвимости сообщайте через Security.
+  - type: input
+    id: version
+    attributes:
+      label: Версия CryptoSSH и Windows
+      placeholder: CryptoSSH 1.0.0, Windows 11 x64
+    validations:
+      required: true
+  - type: input
+    id: token
+    attributes:
+      label: Токен и библиотека (если используются)
+      description: Модель, название DLL, версия и разрядность; без серийного номера.
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Шаги воспроизведения
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидаемое и фактическое поведение
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Текст ошибки или обезличенный снимок экрана

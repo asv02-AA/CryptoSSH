@@ -1,0 +1,8 @@
+{
+  "name": "cryptossh-loopback-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Development-only loopback SSH fixture for CryptoSSH",
+  "license": "MIT",
+  "dependencies": { "ssh2": "1.17.0" }
+}

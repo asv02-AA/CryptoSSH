@@ -1,0 +1,28 @@
+# Build output, development tools and private runtime data
+.tools/
+artifacts/
+release/
+**/bin/
+**/obj/
+**/node_modules/
+*.log
+.vs/
+*.user
+*.suo
+.env
+.env.*
+# Retired prototype (not part of the native client)
+electron/
+src/
+build/
+dist/
+# Proprietary vendor packages and local download scripts
+vendor/
+scripts/fetch-vendor.ps1
+scripts/fetch-jacarta.ps1
+scripts/dotnet-install.ps1
+licenses/OpenSC-COPYING.txt
+licenses/Windows-Terminal-MIT.txt
+licenses/WPF-UI.Terminal-MIT.txt
+installer/generated-uninstall.nsh
+installer/license-unicode.txt
